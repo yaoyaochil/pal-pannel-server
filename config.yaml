@@ -1,0 +1,43 @@
+
+
+system:
+  addr: 8300
+
+mysql:
+  path: 127.0.0.1
+  port: "3306"
+  config: charset=utf8mb4&parseTime=True&loc=Local
+  db-name: palserver
+  username: root
+  password: "localpass"
+  prefix: ""
+  singular: false
+  engine: ""
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: error
+  log-zap: false
+
+redis:
+  db: 0
+  addr: 127.0.0.1:6379
+  password: ""
+
+zap:
+  level: info
+  prefix: '[github.com/yaoyaochil/paladmin/pal_server]'
+  format: console
+  director: log
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  max-age: 0
+  show-line: true
+  log-in-console: true
+
+
+
+jwt:
+  signing-key: 53fff5b5-4d84-464a-bbe1-d955cd2cd714
+  expires-time: 7d
+  buffer-time: 1d
+  issuer: palserveradmin
