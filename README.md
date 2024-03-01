@@ -1,4 +1,4 @@
-# 幻兽帕鲁 服务器管理系统 Web端
+# 幻兽帕鲁 服务器管理系统
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
