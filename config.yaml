@@ -39,5 +39,4 @@ jwt:
   issuer: palserveradmin
 
 palu:
-
   server-path: "/Users/tim/OrbStack/docker/containers/palserver/home/steam/Steam/steamapps/common/PalServer/"

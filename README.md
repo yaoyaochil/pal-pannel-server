@@ -38,7 +38,15 @@ git clone https://github.com/yaoyaochil/pal-pannel-server.git
 go mod tidy
 ```
 
-3. **运行应用程序**：通过运行以下命令启动应用程序：
+3. **配置环境变量**：修改config.yaml中的palu->server-path为你的linux服务端根目录：
+
+```bash
+
+# 服务器配置
+palu:
+  server-path: "/home/yaoyaochil/palu-server"
+```
+4. **运行应用程序**：通过运行以下命令启动应用程序：
 
 ```bash
 go run main.go
