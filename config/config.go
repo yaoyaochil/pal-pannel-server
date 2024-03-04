@@ -15,4 +15,7 @@ type Server struct {
 
 	// 跨域配置
 	Cors CORS `mapstructure:"cors" json:"cors" yaml:"cors"`
+
+	// 幻兽帕鲁配置
+	Palu Palu `mapstructure:"palu" json:"palu" yaml:"palu"`
 }

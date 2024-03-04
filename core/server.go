@@ -2,11 +2,12 @@ package core
 
 import (
 	"fmt"
-	"go.uber.org/zap"
 	"time"
 	"web-server/global"
 	"web-server/initialize"
 	"web-server/service/system"
+
+	"go.uber.org/zap"
 )
 
 type server interface {

@@ -1,0 +1,13 @@
+services:
+   palworld:
+      image: thijsvanloef/palworld-server-docker:latest # Use the latest-arm64 tag for arm64 hosts
+      container_name: palworld-server
+      ports:
+        - 8211:8211/udp
+        - 27015:27015/udp
+      environment:
+         PUID: 1027
+         PGID: 100
+         DISABLE_GENERATE_SETTINGS: true
+      volumes:
+          - /Users/tim/Documents/docker/pal:/palworld/

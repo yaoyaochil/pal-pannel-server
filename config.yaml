@@ -1,5 +1,3 @@
-
-
 system:
   addr: 8300
 
@@ -25,7 +23,7 @@ redis:
 
 zap:
   level: info
-  prefix: '[github.com/yaoyaochil/paladmin/pal_server]'
+  prefix: "[github.com/yaoyaochil/paladmin/pal_server]"
   format: console
   director: log
   encode-level: LowercaseColorLevelEncoder
@@ -34,10 +32,12 @@ zap:
   show-line: true
   log-in-console: true
 
-
-
 jwt:
   signing-key: 53fff5b5-4d84-464a-bbe1-d955cd2cd714
   expires-time: 7d
   buffer-time: 1d
   issuer: palserveradmin
+
+palu:
+
+  server-path: "/Users/tim/OrbStack/docker/containers/palserver/home/steam/Steam/steamapps/common/PalServer/"

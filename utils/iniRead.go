@@ -2,16 +2,18 @@ package utils
 
 import (
 	"fmt"
-	"gopkg.in/ini.v1"
 	"os"
 	"reflect"
 	"strings"
+	"web-server/global"
 	model "web-server/model/pal_server"
+
+	"gopkg.in/ini.v1"
 )
 
 // ReadIni 读取PalWorldSettings.ini文件
 func ReadIni() (data model.PalServerOption, err error) {
-	sourc, err := os.ReadFile("source/game/PalWorldSettings.ini")
+	sourc, err := os.ReadFile(fmt.Sprintf("%sPal/Saved/Config/LinuxServer/PalWorldSettings.ini", global.PalConfig.Palu.ServerPath))
 	if err != nil {
 		return data, err
 	}
@@ -92,11 +94,11 @@ OptionSettings=(Difficulty=%s,DayTimeSpeedRate=%.6f,NightTimeSpeedRate=%.6f,ExpR
 		data.Difficulty, data.DayTimeSpeedRate, data.NightTimeSpeedRate, data.ExpRate, data.PalCaptureRate, data.PalSpawnNumRate, data.PalDamageRateAttack, data.PalDamageRateDefense, data.PlayerDamageRateAttack, data.PlayerDamageRateDefense, data.PlayerStomachDecreaceRate, data.PlayerStaminaDecreaceRate, data.PlayerAutoHPRegeneRate, data.PlayerAutoHpRegeneRateInSleep, data.PalStomachDecreaceRate, data.PalStaminaDecreaceRate, data.PalAutoHPRegeneRate, data.PalAutoHpRegeneRateInSleep, data.BuildObjectDamageRate, data.BuildObjectDeteriorationDamageRate, data.CollectionDropRate, data.CollectionObjectHpRate, data.CollectionObjectRespawnSpeedRate, data.EnemyDropItemRate, data.DeathPenalty, data.BEnablePlayerToPlayerDamage, data.BEnableFriendlyFire, data.BEnableInvaderEnemy, data.BActiveUNKO, data.BEnableAimAssistPad, data.BEnableAimAssistKeyboard, data.DropItemMaxNum, data.DropItemMaxNum_UNKO, data.BaseCampMaxNum, data.BaseCampWorkerMaxNum, data.DropItemAliveMaxHours, data.BAutoResetGuildNoOnlinePlayers, data.AutoResetGuildTimeNoOnlinePlayers, data.GuildPlayerMaxNum, data.PalEggDefaultHatchingTime, data.WorkSpeedRate, data.BIsMultiplay, data.BIsPvP, data.BCanPickupOtherGuildDeathPenaltyDrop, data.BEnableNonLoginPenalty, data.BEnableFastTravel, data.BIsStartLocationSelectByMap, data.BExistPlayerAfterLogout, data.BEnableDefenseOtherGuildPlayer, data.BShowPlayerList, data.CoopPlayerMaxNum, data.ServerPlayerMaxNum, data.ServerName, data.ServerDescription, data.AdminPassword, data.ServerPassword, data.PublicPort, data.PublicIP, data.RCONEnabled, data.RCONPort, data.Region, data.BUseAuth, data.BanListURL)
 	source = strings.ReplaceAll(source, "true", "True")
 	source = strings.ReplaceAll(source, "false", "False")
-	err = os.WriteFile("source/game/PalWorldSettings.ini", []byte(source), 0644)
+
+	err = os.WriteFile(fmt.Sprintf("%sPal/Saved/Config/LinuxServer/PalWorldSettings.ini", global.PalConfig.Palu.ServerPath), []byte(source), 0644)
 	if err != nil {
 		return err
 	}
-
 	return nil
 }
 

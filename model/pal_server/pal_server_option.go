@@ -46,11 +46,11 @@ type PalServerOption struct {
 	BIsMultiplay                         bool    `json:"bIsMultiplay"`                         // 是否多人游戏
 	BIsPvP                               bool    `json:"bIsPvP"`                               // 是否 PvP
 	BCanPickupOtherGuildDeathPenaltyDrop bool    `json:"bCanPickupOtherGuildDeathPenaltyDrop"` // 是否捡取其他公会的死亡惩罚掉落
-	BEnableNonLoginPenalty               bool    `json:"bEnableNonLoginPenalty"`               // 启用非登录惩罚
-	BEnableFastTravel                    bool    `json:"bEnableFastTravel"`                    // 启用快速旅行
-	BIsStartLocationSelectByMap          bool    `json:"bIsStartLocationSelectByMap"`          // 是否通过地图选择起始位置
-	BExistPlayerAfterLogout              bool    `json:"bExistPlayerAfterLogout"`              // 玩家退出后是否保留
-	BEnableDefenseOtherGuildPlayer       bool    `json:"bEnableDefenseOtherGuildPlayer"`       // 启用对其他公会玩家的防御
+	BEnableNonLoginPenalty               bool    `json:"bEnableNonLoginPenalty"`               // 启用超时未登录惩罚
+	BEnableFastTravel                    bool    `json:"bEnableFastTravel"`                    // 启用快速传送
+	BIsStartLocationSelectByMap          bool    `json:"bIsStartLocationSelectByMap"`          // 是否通过地图选择复活位置
+	BExistPlayerAfterLogout              bool    `json:"bExistPlayerAfterLogout"`              // 登出后玩家人物是否存在
+	BEnableDefenseOtherGuildPlayer       bool    `json:"bEnableDefenseOtherGuildPlayer"`       // 启用据点内防御其他公会玩家
 	CoopPlayerMaxNum                     int     `json:"CoopPlayerMaxNum"`                     // 合作玩家最大数量
 	BShowPlayerList                      bool    `json:"bShowPlayerList"`                      // 启用玩家列表显示
 	ServerPlayerMaxNum                   int     `json:"ServerPlayerMaxNum"`                   // 服务器最大玩家数量
