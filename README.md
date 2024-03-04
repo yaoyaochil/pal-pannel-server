@@ -1,8 +1,7 @@
 # 幻兽帕鲁 服务器管理系统
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
-[![typescript](https://img.shields.io/badge/Typescript-use-blue)](https://reactjs.org/)
+[![Golang](https://img.shields.io/badge/Golang-1.21-blue)](https://reactjs.org/)
 
 
 欢迎来到 pal-pannel-web 服务器管理系统的 GitHub 仓库！该系统旨在简化服务器管理任务，为您提供一个全面的解决方案，以高效管理您的服务器。
