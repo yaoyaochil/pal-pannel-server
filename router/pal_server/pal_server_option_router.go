@@ -12,5 +12,7 @@ func (p *PalServerOptionRouter) InitPalServerOptionRouter(router *gin.RouterGrou
 	{
 		r.GET("getOptions", palServerApi.GetOptions)
 		r.POST("updateOptions", palServerApi.UpdateOptions)
+		r.POST("unlockTo20", palServerApi.UnlockTo20)
+		r.GET("checkUnlockTo20", palServerApi.CheckUnlockTo20)
 	}
 }

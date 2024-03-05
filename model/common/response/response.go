@@ -65,3 +65,7 @@ func FailWithDetailed(data interface{}, message string, c *gin.Context) {
 func NotFound(c *gin.Context) {
 	Result(http.StatusNotFound, map[string]interface{}{}, "请求路径不存在", c)
 }
+
+func OkWithBool(data bool, msg string, c *gin.Context) {
+	Result(SUCCESS, data, msg, c)
+}

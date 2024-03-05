@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"reflect"
 	"strings"
@@ -121,4 +122,26 @@ func updateStructFields(source interface{}, target interface{}) {
 func isEmpty(field reflect.Value) bool {
 	zero := reflect.Zero(field.Type())
 	return reflect.DeepEqual(field.Interface(), zero.Interface())
+}
+
+// CopyFile 拷贝文件到指定目录
+func CopyFile(src, dst string) error {
+	sourceFile, err := os.Open(src)
+	if err != nil {
+		return err
+	}
+	defer sourceFile.Close()
+
+	destinationFile, err := os.Create(dst)
+	if err != nil {
+		return err
+	}
+	defer destinationFile.Close()
+
+	_, err = io.Copy(destinationFile, sourceFile)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

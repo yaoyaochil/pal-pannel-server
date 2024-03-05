@@ -23,7 +23,7 @@ redis:
 
 zap:
   level: info
-  prefix: "[github.com/yaoyaochil/paladmin/pal_server]"
+  prefix: "[github.com/yaoyaochil/pal-pannel-server]"
   format: console
   director: log
   encode-level: LowercaseColorLevelEncoder
