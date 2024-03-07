@@ -5,6 +5,7 @@ import (
 	"web-server/global"
 	"web-server/model/common/response"
 	"web-server/model/system"
+	"web-server/model/system/request"
 	systemReq "web-server/model/system/request"
 	systemRes "web-server/model/system/response"
 	"web-server/service"
@@ -86,4 +87,24 @@ func (a *SysUserApi) GetUserInfo(c *gin.Context) {
 		return
 	}
 	response.OkWithData(ReqUser, c)
+}
+
+// ChangePassword 修改密码
+// @Tags 系统用户
+// @Summary 修改密码
+// @Produce  application/json
+// @Security ApiKeyAuth
+// @Param oldPassword query string true "旧密码"
+// @Param newPassword query string true "新密码"
+// @Success 200 {string} string "{"code":200,"data":{},"msg":"修改成功"}"
+// @Router /changePassword [post]
+func (a *SysUserApi) ChangePassword(c *gin.Context) {
+	var user request.ChangePassword
+	userID := utils.GetUserID(c)
+	_ = c.ShouldBindJSON(&user)
+	if err := service.ServiceGroupApp.SystemServiceGroup.SysUserService.ChangePassword(userID, user); err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("修改成功", c)
 }

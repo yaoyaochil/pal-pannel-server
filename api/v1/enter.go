@@ -7,7 +7,7 @@ import (
 
 type ApiGroup struct {
 	SystemApiGroup    system.ApiGroup
-	PalServerApiGroup pal_server.PalServerOptionApi
+	PalServerApiGroup pal_server.ApiGroup
 }
 
 var ApiGroupApp = new(ApiGroup)

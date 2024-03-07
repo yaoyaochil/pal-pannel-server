@@ -35,8 +35,10 @@ func Routers() *gin.Engine {
 		// 方便统一添加路由组前缀 多服务器上线使用
 		//systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
 		pal_server_router.PalServerOptionRouter.InitPalServerOptionRouter(PublicGroup) // 注册幻兽帕鲁服务器配置路由
+		pal_server_router.PalArchiveRouter.InitPalArchiveRouter(PublicGroup)           // 注册幻兽帕鲁存档路由
 		systemRouter.SystemBaseRouter.InitSystemBaseRouter(PublicGroup)                // 注册用户路由
 		systemRouter.SysJwtRouter.InitJwtRouter(PublicGroup)                           // 注册jwt相关路由
+
 	}
 	{
 		// 需要鉴权的路由

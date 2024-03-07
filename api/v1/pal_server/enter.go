@@ -4,6 +4,7 @@ import "web-server/service"
 
 type ApiGroup struct {
 	PalServerOptionApi
+	PalArchiveApi
 }
 
 var (

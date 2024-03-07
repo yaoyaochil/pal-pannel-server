@@ -1,11 +1,13 @@
 package initialize
 
 import (
-	"go.uber.org/zap"
-	"gorm.io/gorm"
 	"os"
 	"web-server/global"
+	model "web-server/model/pal_server"
 	"web-server/model/system"
+
+	"go.uber.org/zap"
+	"gorm.io/gorm"
 )
 
 // Gorm 初始化数据库并产生数据库全局变量
@@ -25,6 +27,7 @@ func RegisterDBTables(db *gorm.DB) {
 		// 系统模块表
 		system.SysUser{},
 		system.JwtBlacklist{},
+		model.PalArchive{},
 	)
 	if err != nil {
 		global.PalLog.Error("register table failed", zap.Error(err))

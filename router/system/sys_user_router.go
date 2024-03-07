@@ -16,4 +16,7 @@ func (s *SysUserRouter) InitSysUserRouter(router *gin.RouterGroup) {
 	{
 		Router.GET("getUserInfo", sysUserApi.GetUserInfo)
 	}
+	{
+		Router.POST("changePassword", sysUserApi.ChangePassword)
+	}
 }

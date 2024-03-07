@@ -1,11 +1,10 @@
 package pal_server
 
-import (
-	"web-server/api/v1"
-)
+import v1 "web-server/api/v1"
 
 type RouterGroup struct {
 	PalServerOptionRouter
+	PalArchiveRouter
 }
 
 var (
