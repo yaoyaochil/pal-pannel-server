@@ -13,7 +13,7 @@ type PalSaveArchiveService struct{}
 
 // SaveArchive 存档保存
 func (s *PalSaveArchiveService) SaveArchive(info request.ArchiveSave) (err error) {
-	sourcePath := fmt.Sprintf("%sPal/Saved", global.PalConfig.Palu.ServerPath)
+	sourcePath := fmt.Sprintf("%sPal/Saved/SaveGames", global.PalConfig.Palu.ServerPath)
 
 	// 创建备份目录
 	// 示例：/Users/tim/OrbStack/docker/containers/palserver/home/steam/Steam/steamapps/common/PalServer/backups
@@ -47,7 +47,7 @@ func (s *PalSaveArchiveService) SaveArchive(info request.ArchiveSave) (err error
 // RestoreArchive 存档恢复
 func (s *PalSaveArchiveService) RestoreArchive(backFileID uint) (err error) {
 	// 示例：/Users/tim/OrbStack/docker/containers/palserver/home/steam/Steam/steamapps/common/PalServer/Pal/Saved
-	savedPath := fmt.Sprintf("%sPal/Saved", global.PalConfig.Palu.ServerPath)
+	savedPath := fmt.Sprintf("%sPal/Saved/SaveGames", global.PalConfig.Palu.ServerPath)
 	var archive model.PalArchive
 	if err = global.PalDB.Where("id = ?", backFileID).First(&archive).Error; err != nil {
 		return errors.New("备份文件不存在")

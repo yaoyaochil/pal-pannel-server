@@ -1,13 +1,13 @@
 system:
-  addr: 8300
+  addr: 8800
 
 mysql:
-  path: 127.0.0.1
+  path: 172.20.0.2
   port: "3306"
   config: charset=utf8mb4&parseTime=True&loc=Local
   db-name: palserver
   username: root
-  password: "localpass"
+  password: "123456"
   prefix: ""
   singular: false
   engine: ""
@@ -18,7 +18,7 @@ mysql:
 
 redis:
   db: 0
-  addr: 127.0.0.1:6379
+  addr: 172.20.0.3:6379
   password: ""
 
 zap:
@@ -39,4 +39,8 @@ jwt:
   issuer: palserveradmin
 
 palu:
-  server-path: "/Users/tim/OrbStack/docker/containers/palserver/home/steam/Steam/steamapps/common/PalServer/"
+  init: false
+  server-path: "/home/steam/Steam/steamapps/common/PalServer/"
+
+command:
+  logout-path: "log/command.log"

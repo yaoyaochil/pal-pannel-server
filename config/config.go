@@ -18,4 +18,7 @@ type Server struct {
 
 	// 幻兽帕鲁配置
 	Palu Palu `mapstructure:"palu" json:"palu" yaml:"palu"`
+
+	// 命令输出配置
+	Command Command `mapstructure:"command" json:"command" yaml:"command"`
 }
